@@ -1,126 +1,64 @@
 # Discount-Project
-This project is a brief demonstration of Discount App workflow where demonstrates the vendor and user side. In this case the vendor enter the product with price per kg and the disccount applied. In the next step the user select the offer, payment type and delivery or take-away.
+This code project is a brief demonstration of Discount App workflow where demonstrates the vendor and user side. In this case the vendor enter the product with price per kg and the disccount applied. In the next step the user select the offer, payment type and delivery or take-away.
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head> <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"><i class="fas fa-shopping-cart"></i> Carrinho de Compras
-    <style>
-      body {
-        font-family: 'Nunito', sans-serif;
-        background: #f1f7f5;
-        padding: 20px;
-        color: #333;
-      }
-    
-      .container {
-        max-width: 800px;
-        margin: auto;
-        background: #ffffff;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-    
-      h2, h3 {
-        text-align: center;
-        color: #2d6a4f;
-      }
-    
-      input, select, button {
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        font-size: 16px;
-        transition: border 0.3s ease;
-      }
-    
-      input:focus, select:focus {
-        border-color: #52b788;
-        outline: none;
-      }
-    
-      button {
-        background-color: #40916c;
-        color: white;
-        border: none;
-        font-weight: bold;
-        cursor: pointer;
-      }
-    
-      button:hover {
-        background-color: #2d6a4f;
-      }
-    
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-    
-      li {
-        background-color: #d8f3dc;
-        margin-bottom: 10px;
-        padding: 15px;
-        border-radius: 8px;
-        cursor: pointer;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-      }
-    
-      li:hover {
-        background-color: #b7e4c7;
-      }
-    
-      .carrinho {
-        background-color: #fff3cd;
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 20px;
-        border-left: 5px solid #f9c74f;
-      }
-    
-      .mensagem {
-        background-color: #d8f3dc;
-        padding: 20px;
-        border-radius: 10px;
-        margin-top: 20px;
-        font-weight: bold;
-        font-size: 18px;
-        color: #2d6a4f;
-        text-align: center;
-        border-left: 5px solid #40916c;
-      }
-    </style>
-    
+<head>
   <meta charset="UTF-8" />
   <title>Plataforma Antidesperdício</title>
+
+  <!-- Fontes e ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Estilo -->
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Nunito', sans-serif;
+      background: #f1f7f5;
       padding: 20px;
+      color: #333;
     }
 
     .container {
       max-width: 800px;
       margin: auto;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     h2, h3 {
       text-align: center;
+      color: #2d6a4f;
     }
 
-    form, select, input, button {
+    input, select, button {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      margin-bottom: 15px;
-      border-radius: 5px;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 8px;
       border: 1px solid #ccc;
+      font-size: 16px;
+      transition: border 0.3s ease;
+    }
+
+    input:focus, select:focus {
+      border-color: #52b788;
+      outline: none;
+    }
+
+    button {
+      background-color: #40916c;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2d6a4f;
     }
 
     ul {
@@ -129,35 +67,40 @@ This project is a brief demonstration of Discount App workflow where demonstrate
     }
 
     li {
-      background-color: #e6f7ff;
+      background-color: #d8f3dc;
       margin-bottom: 10px;
-      padding: 10px;
-      border-radius: 5px;
+      padding: 15px;
+      border-radius: 8px;
       cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
     }
 
     li:hover {
-      background-color: #b3e0ff;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .mensagem {
-      background-color: #d4edda;
-      padding: 15px;
-      border-radius: 5px;
-      margin-top: 15px;
-      text-align: center;
-      color: #155724;
+      background-color: #b7e4c7;
     }
 
     .carrinho {
       background-color: #fff3cd;
-      padding: 15px;
-      border-radius: 5px;
-      margin-top: 15px;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      border-left: 5px solid #f9c74f;
+    }
+
+    .mensagem {
+      background-color: #d8f3dc;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #2d6a4f;
+      text-align: center;
+      border-left: 5px solid #40916c;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </head>
@@ -167,11 +110,11 @@ This project is a brief demonstration of Discount App workflow where demonstrate
     <form id="form-produto">
       <input type="text" id="nome" placeholder="Nome do Produto" required />
       <input type="number" id="preco" placeholder="Preço original (R$)" step="0.01" required />
-      <input type="number" id="desconto" placeholder="Desconto (%)" required />
+      <input type="number" id="desconto" placeholder="Desconto (%)" step="0.01" required />
       <button type="submit">Cadastrar Produto</button>
     </form>
 
-    <h2>Consumidor - Produtos Disponíveis</h2>
+    <h2><i class="fas fa-shopping-cart"></i> Consumidor - Produtos Disponíveis</h2>
     <ul id="lista-produtos"></ul>
 
     <div class="carrinho hidden" id="carrinho">
