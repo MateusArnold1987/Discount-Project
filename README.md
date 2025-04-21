@@ -1,5 +1,4 @@
 # Discount-Project
-This code project is a brief demonstration of Discount App workflow where demonstrates the vendor and user side. In this case the vendor enter the product with price per kg and the disccount applied. In the next step the user select the offer, payment type and delivery or take-away.
 
 <!DOCTYPE html>
 <html lang="pt-BR">
