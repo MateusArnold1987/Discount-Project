@@ -1,6 +1,6 @@
 # Discount-Project
 
-This code project is a brief demonstration of Discount App workflow where demonstrates the vendor and user side. In this case the vendor enter the product with price per kg and the disccount applied. In the next step the user select the offer, payment type and delivery or take-away.
+Este projeto é uma breve demonstração do fluxo de trabalho da paltaforma de desconto, que demonstra o lado do fornecedor e do usuário. Neste caso, o fornecedor insere o produto, o preço por kilo e o desconto aplicado. Na próxima etapa, o usuário seleciona a oferta, o tipo de pagamento e a opção de entrega ou retirada.
 
 <!DOCTYPE html>
 <html lang="pt-BR">
